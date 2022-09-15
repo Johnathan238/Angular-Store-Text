@@ -1,4 +1,4 @@
-import { Injectable } from '@angular/core';
+import { EventEmitter, Injectable } from '@angular/core';
 
 @Injectable({
   providedIn: 'root'
@@ -16,9 +16,15 @@ export class ItemsService {
     }
   ]
 
+  ideasUpdated = new EventEmitter<string>()
+
   constructor() { }
 
-  addIdea(item: String){
+  addIdea(item: string){
     this.ideas.push({item: item})
+  }
+
+  updateIdea(id: number, item: string){
+    this.ideas[id].item = item
   }
 }
