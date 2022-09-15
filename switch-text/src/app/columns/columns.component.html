@@ -5,7 +5,7 @@
   <mat-grid-tile>Deployment</mat-grid-tile>
 </mat-grid-list>
 
-<mat-grid-list cols="4" rowHeight="100px"
+<mat-grid-list cols="4" rowHeight="100px" class="items-ideas"
   *ngFor="let idea of ideas; let i = index">
-  <mat-grid-tile>{{ idea.item }}</mat-grid-tile>
+  <mat-grid-tile><button>{{ idea.item }}</button></mat-grid-tile>
 </mat-grid-list>
