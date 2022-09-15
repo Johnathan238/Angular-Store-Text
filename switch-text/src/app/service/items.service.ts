@@ -18,7 +18,9 @@ export class ItemsService {
 
   ideasUpdated = new EventEmitter<string>()
 
-  constructor() { }
+  constructor() {
+    console.log(this.ideasUpdated);
+  }
 
   addIdea(item: string){
     this.ideas.push({item: item})

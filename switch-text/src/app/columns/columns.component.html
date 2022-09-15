@@ -1,6 +1,11 @@
-<mat-grid-list cols="4" rowHeight="100px">
+<mat-grid-list cols="4" rowHeight="100px" class="colmuns">
   <mat-grid-tile>Idea</mat-grid-tile>
   <mat-grid-tile>Development</mat-grid-tile>
   <mat-grid-tile>Testing</mat-grid-tile>
   <mat-grid-tile>Deployment</mat-grid-tile>
+</mat-grid-list>
+
+<mat-grid-list cols="4" rowHeight="100px"
+  *ngFor="let idea of ideas; let i = index">
+  <mat-grid-tile>{{ idea.item }}</mat-grid-tile>
 </mat-grid-list>
