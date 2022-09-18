@@ -39,7 +39,7 @@ export class ItemsService {
     this.ideas[id].item = item
   }
 
-  onClick(ideas: {item: string}){
-    
+  moveIdea(ideas: {item: string}){
+    this.ideas.push(this.store)
   }
 }

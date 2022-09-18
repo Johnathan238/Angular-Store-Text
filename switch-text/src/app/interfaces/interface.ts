@@ -1,5 +1,5 @@
 export interface Store {
-  development: [];
-  testing: [];
-  deployment: [];
+  development: string[];
+  testing: string[];
+  deployment: string[];
 }
