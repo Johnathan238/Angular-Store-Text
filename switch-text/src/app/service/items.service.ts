@@ -1,4 +1,5 @@
 import { EventEmitter, Injectable } from '@angular/core';
+import { Store } from '../interfaces/interface';
 
 @Injectable({
   providedIn: 'root'
@@ -13,8 +14,16 @@ export class ItemsService {
     },
     {
       item: 'meeting'
-    }
+    },
   ]
+
+  store: Store = {
+    development: [],
+    testing: [],
+    deployment: [],
+  }
+
+
 
   ideasUpdated = new EventEmitter<string>()
 
@@ -28,5 +37,9 @@ export class ItemsService {
 
   updateIdea(id: number, item: string){
     this.ideas[id].item = item
+  }
+
+  onClick(ideas: {item: string}){
+    
   }
 }

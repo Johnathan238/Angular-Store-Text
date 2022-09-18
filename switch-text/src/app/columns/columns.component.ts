@@ -9,8 +9,11 @@ import { ItemsService } from '../service/items.service';
 export class ColumnsComponent implements OnInit {
   @Input() ideas: { item: string }[] = []
 
-  constructor(private theIdeas: ItemsService) { }
-
+  constructor(private theIdeas: ItemsService) {
+    this.theIdeas.ideasUpdated.subscribe(
+      (ideas: string) => alert('Moved to ' + ideas)
+    )
+  }
   ngOnInit(): void {
     this.ideas = this.theIdeas.ideas
     console.log(this.ideas);
