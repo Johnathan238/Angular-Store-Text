@@ -1,4 +1,5 @@
 import { Component, Input, OnInit } from '@angular/core';
+import { Store } from '../interfaces/interface';
 import { ItemsService } from '../service/items.service';
 
 @Component({
@@ -15,9 +16,8 @@ export class ColumnsComponent implements OnInit {
     )
   }
   ngOnInit(): void {
-    this.ideas = this.theIdeas.ideas
+    this.ideas = this.theIdeas.Ideas
     console.log(this.ideas);
-
   }
 
 }

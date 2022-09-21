@@ -1,11 +1,11 @@
 import { EventEmitter, Injectable } from '@angular/core';
-import { Store } from '../interfaces/interface';
+import { Ideas, Store } from '../interfaces/interface';
 
 @Injectable({
   providedIn: 'root'
 })
 export class ItemsService {
-  ideas = [
+  Ideas = [
     {
       item: 'Find bug'
     },
@@ -14,13 +14,17 @@ export class ItemsService {
     },
     {
       item: 'meeting'
-    },
+    }
   ]
 
   store: Store = {
+    allIdeas: [
+    {
     development: [],
     testing: [],
     deployment: [],
+    }
+  ]
   }
 
 
@@ -29,17 +33,19 @@ export class ItemsService {
 
   constructor() {
     console.log(this.ideasUpdated);
+    console.log(this.store);
   }
 
+
   addIdea(item: string){
-    this.ideas.push({item: item})
+    this.Ideas.push({item: item})
   }
 
   updateIdea(id: number, item: string){
-    this.ideas[id].item = item
+    this.Ideas[id].item = item
   }
 
   moveIdea(){
-    this.ideas.push(this.store)
+    this.Ideas.push(this.store.allIdeas)
   }
 }

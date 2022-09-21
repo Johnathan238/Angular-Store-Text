@@ -1,5 +1,14 @@
+export interface Ideas{
+  item: string
+}
+
+
 export interface Store {
-  development: string[];
-  testing: string[];
-  deployment: string[];
+  allIdeas: [
+    {
+    development: Ideas[];
+    testing: Ideas[];
+    deployment: Ideas[];
+    }
+  ]
 }
