@@ -45,7 +45,7 @@ export class ItemsService {
     this.Ideas[id].item = item
   }
 
-  moveIdea(){
-    this.Ideas.push(this.store.allIdeas)
+  moveIdea(item: string){
+    this.Ideas.push(item, this.store.allIdeas[0])
   }
 }
